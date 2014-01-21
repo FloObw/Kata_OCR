@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Runner psoido main
+ * AccountNumber Class foor check and transform
  * @package Kata
  * @author Florian Obwegs <florian.obwegs@raiffeisen.it>
  * @copyright Copyright (c) 2013 Raiffeisen OnLine Gen.
@@ -13,12 +14,18 @@ class Kata_Accountnumber
     private $isreadable = true;
 
     private $accountNumber = Null;
-
+    
+    /*
+     * Getter for accountNumber return int accountNumber
+     */
     public function getAccountNumber ()
     {
         return $this->accountNumber;
     }
-
+    
+    /*
+     * Setter for accountNumber
+     */
     public function setAccountNumber ($accountNumber)
     {
         $this->accountNumber .= $accountNumber;
@@ -67,7 +74,7 @@ class Kata_Accountnumber
             $this->setIsValidChecksum(true);
         }
         
-        
-        // (d1+(2*d2) + (3*d3) + (4*d4) + (5*d5) +(6*d6)  +(7*d7) + (8*d8) + (9*d9) mod 11 = 0
+        // (d1+(2*d2) + (3*d3) + (4*d4) + (5*d5) +(6*d6) +(7*d7) + (8*d8) +
+        // (9*d9) mod 11 = 0
     }
 }
