@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pmd version="1.1.0" timestamp="2013-07-31T15:54:03+02:00">
+  <file name="/root/playground/kata-template/library/Kata/Runner.php">
+    <violation beginline="5" endline="5" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $a
+    </violation>
+    <violation beginline="5" endline="5" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $b
+    </violation>
+  </file>
+</pmd>

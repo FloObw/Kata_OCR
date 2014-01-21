@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1381303585">
+  <project timestamp="1381303585">
+    <file name="C:\workspace\kata-aaron\library/Bootstrap.php">
+      <class name="Bootstrap" namespace="global">
+        <metrics methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="3" coveredelements="0"/>
+      </class>
+      <metrics loc="51" ncloc="48" classes="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <file name="C:\workspace\kata-aaron\library/Kata/BinaryReverser.php">
+      <class name="Kata_BinaryReverser" namespace="global" fullPackage="Kata" package="Kata">
+        <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="8" elements="9" coveredelements="9"/>
+      </class>
+      <line num="19" type="method" name="calculateReverseBinary" crap="5" count="6"/>
+      <line num="21" type="stmt" count="6"/>
+      <line num="22" type="stmt" count="5"/>
+      <line num="24" type="stmt" count="1"/>
+      <line num="25" type="stmt" count="1"/>
+      <line num="26" type="stmt" count="1"/>
+      <line num="27" type="stmt" count="1"/>
+      <line num="28" type="stmt" count="1"/>
+      <line num="29" type="stmt" count="1"/>
+      <line num="32" type="stmt" count="1"/>
+      <metrics loc="31" ncloc="17" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="8" elements="9" coveredelements="9"/>
+    </file>
+    <file name="C:\workspace\kata-aaron\library/Kata/Runner.php">
+      <class name="Kata_Runner" namespace="global" fullPackage="Kata" package="Kata">
+        <metrics methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="1" coveredelements="0"/>
+      </class>
+      <metrics loc="29" ncloc="14" classes="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <metrics files="3" loc="111" ncloc="79" classes="3" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="8" elements="9" coveredelements="9"/>
+  </project>
+</coverage>
