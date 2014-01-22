@@ -8,7 +8,9 @@
  */
 class Kata_File
 {
+
     public $file = '';
+
     public $lineArray = array();
 
     public function __construct ($file)
@@ -18,26 +20,31 @@ class Kata_File
 
     public function parse ()
     {
-        $this->file = fopen($this->file, "r");
-        $this->getCharsAsArrayInLine($this->file);
-        return  $this->lineArray;
+        if (file_exists($this->file)) {
+            $this->file = fopen($this->file, "r");
+            $this->getCharsAsArrayInLine($this->file);
+        } else {
+            echo 'Error file not found';
+        }
+        return $this->lineArray;
     }
 
     public function getCharsAsArrayInLine ($file)
     {
         $fileLine = 27;
         $digitLine = 1;
-        while (! feof($file)) {
-            $line = fgets($file);
-            $line = str_replace("\r\n", "", $line);
-            if (strlen($line) === $fileLine) {
-                $this->merge(str_split($line, 3), $digitLine);
-            } else {
-                $digitLine ++;
+        if ($file) {
+            while (! feof($file)) {
+                $line = fgets($file);
+                $line = str_replace("\r\n", "", $line);
+                if (strlen($line) === $fileLine) {
+                    $this->merge(str_split($line, 3), $digitLine);
+                } else {
+                    $digitLine ++;
+                }
             }
+            $this->close();
         }
-        
-        $this->close();
     }
 
     /**

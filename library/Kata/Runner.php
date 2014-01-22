@@ -18,7 +18,8 @@ class Kata_Runner
      */
     public static function main()
     {
-        $filePath = 'C:\workspace\kata-florian\tests\library\Kata';
+        //$filePath = 'C:\workspace\kata-florian\tests\library\Kata';
+        $filePath = 'C:\Users\Florian\workspace\Kata_OCR\tests\library\Kata';
         $sampleFile = $filePath.'\SampleFile.txt';
         $fileData = new Kata_File($sampleFile);
         
