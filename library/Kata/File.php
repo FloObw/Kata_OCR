@@ -18,7 +18,6 @@ class Kata_File
 
     public function parse ()
     {
-        $data = array();
         $this->file = fopen($this->file, "r");
         $this->getCharsAsArrayInLine($this->file);
         return  $this->lineArray;
@@ -26,15 +25,14 @@ class Kata_File
 
     public function getCharsAsArrayInLine ($file)
     {
-        $fileLine = 0;
+        $fileLine = 27;
         $digitLine = 1;
         while (! feof($file)) {
             $line = fgets($file);
             $line = str_replace("\r\n", "", $line);
-            if (strlen($line) === 27) {
+            if (strlen($line) === $fileLine) {
                 $this->merge(str_split($line, 3), $digitLine);
-            }             // New Line
-            else {
+            } else {
                 $digitLine ++;
             }
         }
@@ -51,6 +49,7 @@ class Kata_File
         } else {
             
             foreach ($this->lineArray[$digitLine] as $key => $digits) {
+                $digits = $digits;
                 $this->lineArray[$digitLine][$key] .= $lineAsArray[$key];
             }
         }

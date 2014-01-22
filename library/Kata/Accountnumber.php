@@ -9,18 +9,18 @@
 class Kata_Accountnumber
 {
 
-    private $isValidChecksum = FALSE;
+    private $_isValidChecksum = FALSE;
 
-    private $isreadable = true;
+    private $_isreadable = true;
 
-    private $accountNumber = Null;
+    private $_accountNumber = Null;
     
     /*
      * Getter for accountNumber return int accountNumber
      */
     public function getAccountNumber ()
     {
-        return $this->accountNumber;
+        return $this->_accountNumber;
     }
     
     /*
@@ -28,36 +28,37 @@ class Kata_Accountnumber
      */
     public function setAccountNumber ($accountNumber)
     {
-        $this->accountNumber .= $accountNumber;
+        $this->_accountNumber .= $accountNumber;
     }
 
     public function getIsreadable ()
     {
-        return $this->isreadable;
+        return $this->_isreadable;
     }
 
     public function setIsreadable ($isreadable)
     {
-        $this->isreadable = $isreadable;
+        $this->_isreadable = $isreadable;
     }
 
     public function isValidChecksum ()
     {
         if ($this->getIsreadable()) {
             $this->calcChecksum();
-            return $this->isValidChecksum;
+            return $this->_isValidChecksum;
         }
     }
 
     public function setIsValidChecksum ($valid)
     {
-        $this->isValidChecksum = $valid;
+        $this->_isValidChecksum = $valid;
     }
 
     public function calcChecksum ()
     {
         $reversedSplitNumber = array_reverse(
-                str_split($this->getAccountNumber(), 1));
+            str_split($this->getAccountNumber(), 1)
+        );
         $sumVal = 0;
         $temp = 0;
         for ($i = 0; $i < count($reversedSplitNumber); $i ++) {

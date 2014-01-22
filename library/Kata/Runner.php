@@ -12,14 +12,14 @@ class Kata_Runner
     /**
      * Main entry point for Kata example psoido main
      *
-     * @param array $args Command Line Parameters
      *
      * @return void
      * @codeCoverageIgnore
      */
-    public static function main($args)
+    public static function main()
     {
-        $sampleFile = 'C:/Users/Florian/workspace/Kata_OCR/tests/library/Kata/SampleFile.txt';
+        $filePath = 'C:\workspace\kata-florian\tests\library\Kata';
+        $sampleFile = $filePath.'\SampleFile.txt';
         $fileData = new Kata_File($sampleFile);
         
         $dataLine = $fileData->parse();
@@ -40,7 +40,11 @@ class Kata_Runner
             } elseif (! $accountnumber->getIsreadable()) {
                 $state = 'ILL';
             }
-            printf('%s %s %s', $accountnumber->getAccountNumber(), $state, PHP_EOL);
+            printf(
+                '%s %s %s',
+                $accountnumber->getAccountNumber(),
+                $state, PHP_EOL
+            );
         }
     }
 }
