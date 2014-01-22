@@ -2,19 +2,22 @@
 
 /**
  * Runner psoido main
+ *
  * @package Kata
  * @author Florian Obwegs <florian.obwegs@raiffeisen.it>
  * @copyright Copyright (c) 2013 Raiffeisen OnLine Gen.
  */
 class Kata_Runner
 {
-
     /**
-     * @codeCoverageIgnore
      * Main entry point for Kata example psoido main
+     *
+     * @param array $args Command Line Parameters
+     *
      * @return void
+     * @codeCoverageIgnore
      */
-    public static function main()
+    public static function main($args)
     {
         $sampleFile = 'C:/Users/Florian/workspace/Kata_OCR/tests/library/Kata/SampleFile.txt';
         $fileData = new Kata_File($sampleFile);
