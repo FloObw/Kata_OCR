@@ -24,7 +24,7 @@ class Kata_File
             $this->file = fopen($this->file, "r");
             $this->getCharsAsArrayInLine($this->file);
         } else {
-            echo 'Error file not found';
+            echo 'Error file not found!';
         }
         return $this->lineArray;
     }
