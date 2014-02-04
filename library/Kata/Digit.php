@@ -11,6 +11,8 @@ class Kata_Digit
 {
 
     private $_orgData = array();
+    
+    private $_orgDataAsArray = array();
 
     private $_isReadable = TRUE;
 
@@ -31,6 +33,10 @@ class Kata_Digit
 
     public function getOrgData ()
     {
+        $data = $this->getOrgDataAsArray();
+        if(!empty($data)){
+            return implode('', $data);
+        }
         return $this->_orgData;
     }
 
@@ -39,6 +45,24 @@ class Kata_Digit
         $this->_orgData = $orgData;
     }
 
+    public function getOrgDataAsArray ()
+    {
+        return $this->_orgDataAsArray;
+    }
+
+    public function setDataAsArray ($orgData, $iterator = NULL)
+    {
+        
+        if($iterator !== NULL)
+        {
+            $this->_orgDataAsArray[$iterator] =  $orgData;
+        }
+        else{
+            $this->_orgDataAsArray = $orgData;
+        }        
+        
+    }
+        
     public function getIsReadable ()
     {
         return $this->_isReadable;
@@ -49,7 +73,6 @@ class Kata_Digit
         $this->_isReadable = $isReadable;
     }
 
-   
     public function getDigitNumber ()
     {
         $hashVal =  md5($this->getOrgData());

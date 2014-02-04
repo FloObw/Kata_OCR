@@ -23,28 +23,47 @@ class Kata_Runner
         $sampleFile = $filePath.'\SampleFile.txt';
         $fileData = new Kata_File($sampleFile);
         
-        $dataLine = $fileData->parse();
-        foreach ($dataLine as $line) {
+        foreach ($fileData->parse() as $line) {
             $accountnumber = new Kata_Accountnumber();
             foreach ($line as $char) {
                 $digit = new Kata_Digit();                
                 $digit->setOrgData($char);
+                $digit->setDataAsArray(str_split($char, 3));
+              
                 if (! is_numeric($digit->getDigitNumber())) {
                     $accountnumber->setIsreadable(false);
                 }
-                $accountnumber->setAccountNumber($digit->getDigitNumber());
+                $accountnumber->setAccountNumber($digit);
             }
             $state = '';
+            $possibilities = '';
+            
+            
             if ($accountnumber->getIsreadable() &&
             ! $accountnumber->isValidChecksum()) {
                 $state = 'ERR';
             } elseif (! $accountnumber->getIsreadable()) {
                 $state = 'ILL';
             }
+            
+            //If some error or not readable
+            if( $state == 'ERR' && $accountnumber->getIsreadable() && ! $accountnumber->isValidChecksum())
+            {
+                //Try to change elements
+                $accountnumber->repair();
+                if(count($accountnumber->getPossibleAccountNumber())){
+                    $state = 'AMB';
+                    $possibilities = ' ['. implode (' ,',$accountnumber->getPossibleAccountNumber()).']';
+                }
+            }
+            
+            
             printf(
-                '%s %s %s',
+                '%s %s %s %s',
                 $accountnumber->getAccountNumber(),
-                $state, PHP_EOL
+                $state,
+                $possibilities,
+                PHP_EOL
             );
         }
     }
